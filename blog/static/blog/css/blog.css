@@ -1,0 +1,326 @@
+/* 一覧 */
+.dotnone{
+    list-style: none;
+
+}
+
+/* ----------Index.html---------- */
+
+.sectionmain{
+    
+    width:1000px;
+    margin: 10px 0px 10px 120px;
+
+}
+
+/*---------- sectionside
+-------------------------------------------------------- */
+.mainbox {
+    /* background-color: black; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+/* aside 
+-------------------------------*/
+
+.sectionside{
+    /* background-color: aqua; */
+    margin: 10px 120px 10px 120px;
+    width: 400px;
+    
+}
+.sidebar ul{
+
+}
+.sidebar {
+    color: #f5f5f5;
+    font-size: 25px;
+    text-align: left;
+    margin-bottom: 50px;
+}
+.sidebar a{
+    color: #d9bf00;
+    font-size: 20px;
+    text-decoration-line: none;
+}
+.sidebar span{
+    color: #d9bf00;
+    font-size: 20px;
+    text-decoration-line: none;
+}
+
+.sidebar-footer{
+    font-size: 25px;
+    border: solid 2px #d9bf00;
+    margin-bottom: 20px;
+    width: 180px;
+}
+    
+
+/* intro 
+---------------------------------*/
+
+.intro{
+    margin-bottom: 50px;
+}
+
+.intro p{
+    font-size: 15px;
+    color:#f5f5f5;
+    text-align: justify;
+}
+
+.intro h2{
+    
+    font-size: 25px;
+    text-align: left;
+    color: #f5f5f5;
+} 
+
+
+
+/* ----------main---------- */
+
+.mainarea h1{
+    font-size: 50px;
+    color: #f5f5f5;
+    margin-left: 40px;
+}
+
+
+
+.articlebox{
+    flex-direction: row;
+    background-color: #9c9c9c;
+    height: 200px;
+    width: 900px;
+    display: flex;
+    margin-bottom: 30px;
+    border: solid 2px #d9bf00;
+}
+
+.imgbox{
+    width:300px;
+    height: 150px;
+    background-color: #9c9c9c;
+    text-align: center;
+    border: solid 2px #d9bf00;
+    margin: 25px 10px;
+}
+
+.mainarea img{
+    height: 150px;
+    
+}
+
+
+
+.textbox h3{
+    font-size: 20px;
+}
+
+.ctbooder{
+    border: solid 2px gray;
+    border-radius: 30px;
+    background-color: gray;
+    color: #f5f5f5;
+}
+
+.textbox a{
+    text-decoration-line: none;
+    color: #d9bf00;
+}
+
+
+/* pagenavi */
+
+.pagenav{
+    /* background-color: green; */
+    margin-top:30px;
+    margin-left: 40px;
+    width: 905px;
+    text-align: center;
+}
+
+.pagenav span{
+    text-decoration-line: none;
+    color:  #f5f5f5;
+    margin: 0px 10px;
+    border: solid 2px  #f5f5f5 ;
+    border-radius:10px ;
+    font-size: 30px;
+    
+}
+.pagenav a{
+    text-decoration-line: none;
+    color:  #f5f5f5;
+    margin: 0px 10px;
+    border: solid 2px  #f5f5f5 ;
+    border-radius:10px ;
+    font-size: 20px;
+}
+
+
+/* Post.detail */
+.articletaitle{
+    margin-left: 20px;
+}
+.articletaitle h1{
+    font-size: 40px;
+}
+
+.articledetail{
+    height: auto;
+    margin-left: 20px;
+}
+
+.articledetail span{
+    background-color: gray;
+    border-color: #f5f5f5;
+}
+
+.maincontent{
+    font-size: 20px;
+    width: 900px;
+    line-height: 30px;
+}
+
+.maincontent p{
+    text-align: justify;
+}
+
+.toc{
+    border-bottom: solid 1px #f5f5f5;
+}
+
+.toc a{
+    color: #d9bf00;
+    text-decoration-line: none;
+    
+}
+
+.toc::before {
+    content: "目次";
+    font-size: 30px;
+
+}
+
+/* tag/category  list and post
+----------------------------------------------- */
+/* tag/category list a */
+
+.tclista a{
+    color: #d9bf00;
+    font-size: 20px;
+    text-decoration-line: none;
+}
+
+@media screen and (max-width:480px) {
+
+
+    
+
+
+    .sectionmain{
+	width: 340px;
+	margin: 10px 10px;
+    }
+
+    .articletaitle p{
+	font-size: 10px;
+    }
+    .articletaitle h1{
+	font-size: 20px;
+    }
+
+    .articledetail p{
+	font-size: 10px;
+    }
+
+    .maincontent{
+	font-size: 10px;
+	width: 340px;
+    }
+
+    .maincontent img{
+	width: 340px;
+    }
+
+    .mainbox {
+	justify-content: center;
+    }
+    
+    .mainarea h1{
+	font-size: 30px;
+	color: #f5f5f5;
+	width: 340px;
+    }
+
+
+
+    .articlebox{
+	flex-direction: row;
+	background-color: #9c9c9c;
+	height: 500px;
+	width: 280px;
+	flex-direction: column;
+	margin-bottom: 30px;
+	border: solid 2px #d9bf00;
+    }
+
+    .imgbox{
+	width:255px;
+	height: 100px;
+	background-color: #9c9c9c;
+	text-align: center;
+	border: solid 2px #d9bf00;
+	margin: 25px 10px;
+    }
+
+    .mainarea img{
+	height: 100px;
+	
+    }
+
+    .textbox p{
+	font-size: 10px;
+	line-height: 20px;
+    }
+
+
+
+    .textbox h3{
+	font-size: 20px;
+    }
+
+    .pagenav{
+	/* background-color: green; */
+	margin-top:30px;
+	margin-left: 40px;
+	width: 280px;
+	text-align: center;
+    }
+
+    .pagenav span{
+	text-decoration-line: none;
+	color:  #f5f5f5;
+	margin: 0px 10px;
+	border: solid 2px  #f5f5f5 ;
+	border-radius:10px ;
+	font-size: 15px;
+	
+    }
+    .pagenav a{
+	text-decoration-line: none;
+	color:  #f5f5f5;
+	margin: 0px 10px;
+	border: solid 2px  #f5f5f5 ;
+	border-radius:10px ;
+	font-size: 10px;
+    }
+
+    
+}

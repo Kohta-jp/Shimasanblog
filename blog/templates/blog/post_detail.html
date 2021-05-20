@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}シマブログの投稿の詳細です。｜{{ block.super }}{% endblock %}
+{% block description %}シマのブログです。この投稿の詳細をチェックしてくださりありがとうございます。{% endblock %}
+
+
+{% block content %}
+<div class="mainbox">
+  <div class="sectionmain">
+    <main>
+      <div class="articletaitle">
+	<p>{{ object.published_at|date }}</p>
+	<h1>{{ object.title }}</h1>
+      </div>
+      <div class="articledetail">
+	<p><span class="ctbooder">カテゴリー</span>　　{{ object.category.name }}　　<span class="ctbooder">タグ</span>{% for tag in object.tags.all %}　　{{ tag.name }}{% endfor %}</p>
+	<p>{{ post.description | linebreaksbr | urlize }}</p>
+      </div>
+      <hr>
+      <div class="maincontent">
+	{{ object.get_text_markdownx | safe }}
+      </div>
+      
+    </main>
+  </div>
+  <div class="sectionside">
+    <aside class="sidebar-box">
+      {% include "blog/sidebar.html" %}
+    </aside>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+<!-- templates/base.html -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}ShimaBlog{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
+
+    <link rel="icon" href="{% static 'img/webfabicon.ico' %}">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+    
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <!-- highlight.js-->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+    <!-- highlight.js-->
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      /* テーブル*/
+      table {
+	  
+	  border-collapse: collapse;
+	  border:solid 2px #000;
+      }
+      
+      /* テーブル*/
+      th{
+	  border: solid 2px #000;
+	  background-color: #cccccc;
+	  
+      }
+      td{
+	  border: solid 2px #000;
+	  background-color: #ebebeb;
+      }
+
+      /* このブロックの枠を制限*/
+      .detail_field {
+	  margin-right: 70%;
+      }
+
+    </style>
+  </head>
+  <body>
+    
+    <div class="footerFixed">
+      <header class="base-header headerdesign">
+	
+	<div  class="page-title">
+	  <h1><a href="http://127.0.0.1:8000/">SHIMABLOG</a></h1>
+	  <div class="introlist">
+	    <div class="tprolist">
+	      <img class="logo" src="{% static "img/person.png"%}" alt="ホームへ" width="100%" height="100%">
+	      <p><a href="mailto:shimasanlog.d&#64;gmail.com">shimasanlog.d&#64;gmail.com</a></p>
+	    </div>
+	    <ul class="prolist">
+	      <li><a href="https://www.instagram.com/shimasanlog.d/"><img class="logo" src="{% static "img/instagram.png"%}" alt="ホームへ" width="100%" height="100%"></a></li>
+	      <li><a href="https://www.twitch.tv/shimasangame"><img class="logo" src="{% static "img/twitch.png"%}" alt="ホームへ" width="100%" height="100%"></a></li>
+	      <li><a href="https://twitter.com/SHIMA_log12"><img class="logo" src="{% static "img/twitter.png"%}" alt="ホームへ" width="100%" height="100%"></a></li>
+	      <li><a href="https://github.com/Kohta-jp"><img class="logo" src="{% static "img/github.png"%}" alt="ホームへ" width="100%" height="100%"></a></li>
+	      <li><a href="https://www.youtube.com/channel/UCT1p9xCOY2W0i-2bd209jnQ"><img class="logoy" src="{% static "img/youtube-icon.png"%}" alt="ホームへ" width="100%" height="100%"></a></li>
+	    </ul>
+	  </div>
+	</div>
+
+	
+      </header>
+      
+      {% block content %}      
+      {% endblock %}
+      <footer>
+	<div class="cmark">
+          <p><strong><span>KARICIRCLE</span></strong></p>
+	</div>
+      </footer>
+    </div>
+  </body>
+</html>

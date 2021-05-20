@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}シマブログの投稿一覧{{ block.super }}{% endblock %}
+{% block description %}シマさんのブログです。日々の記録を発信しています。{% endblock %}
+
+
+{% block content %}
+<div class="mainbox">
+  <div class="sectionmain">
+    <main>
+      <div class="mainarea">
+	<h1>投稿一覧</h1>
+	<ul class="dotnone ">
+	  {% for post in object_list %}
+	  {% if user.is_authenticated or post.is_public %}
+	  <li>
+	    <div class="articlebox">
+	      {% if post.image %}
+	      <div class="imgbox">
+		<a href="{% url 'blog:post_detail' post.id %}">
+		  <img src="{{ post.image.url }}" alt="{{ post.title }}">
+		</a>
+	      </div>
+	      <div class="textbox">
+		{% if not post.is_public %}[下書き] {% endif %}
+		<h3><a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a></h3>
+		<p><span class="ctbooder">カテゴリー</span>　{{ post.category }}　　<span class="ctbooder">タグ</span>{% for tag in post.tags.all %}　#{{ tag }}{% endfor %}　</p>
+		
+		<p>{{ post.description | linebreaksbr | urlize }}</p>
+		<p>{{ post.published_at }}</p>
+		{% endif %}
+	      </div>
+	    </div>
+	  </li>
+	  {% endif %}
+	  {% empty %}
+	  <li>まだ投稿はありません。</li>
+	  {% endfor %}
+	</ul>
+      </div>
+      {% include "blog/pagination.html" %}
+    </main>
+  </div>
+
+  <div class="sectionside">
+    <div class="intro ">
+      <h2>自己紹介</h2>
+      <hr>
+      <p>こんにちは。―あるいはこんばんは。</p>
+      <p>シマと申します。</p>
+      <p>カリサークルというサークルメンバーの一人でいろいろなことに挑戦中。</p>
+      <p>このブログは私の七転八倒な日々の記録です。</p>
+      <p><趣味></p>
+      <p>読書・プログラミング・パソコンいじり・動画制作</p>
+    </div>
+    <aside class="sidebar-box">
+      {% include "blog/sidebar.html" %}
+    </aside>
+  </div>
+</div>
+
+
+{% endblock %}
