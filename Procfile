@@ -1,1 +1,1 @@
-web: gunicorn Shimasanblog.wsgi 
+web: gunicorn Shimasanblog.wsgi --log-file -
